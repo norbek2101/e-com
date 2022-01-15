@@ -3,7 +3,7 @@ from django.conf import settings
 from onlineshop.models import Product
 
 class  Cart(object):
-    def __int__(self, request):
+    def __init__(self, request):
         self.session = request.session
         cart = self.session.get(settings.CART_SESSION.ID)
 
