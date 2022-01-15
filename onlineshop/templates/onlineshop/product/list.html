@@ -21,7 +21,7 @@
         <h3>Categories</h3>
         <ul>
             <li {% if not category %}class="selected"{% endif %}>
-                <a href="{% url 'product_list' %}">All</a>
+                <a href="{% url 'onlineshop:product_list' %}">All</a>
             </li>
             
             {% for c in categories %}
