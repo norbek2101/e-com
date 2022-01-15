@@ -16,7 +16,7 @@ def product_list(request, category_slug=None):
     context = {
         'category': category,
         'categories': categories,
-        'products': products,  
+        'products': products  
     }
     return render(request, 'onlineshop/product/list.html', context)        
         

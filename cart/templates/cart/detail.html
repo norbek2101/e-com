@@ -31,7 +31,14 @@
                             <a href=""><img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/default_pr.jpg' %}{% endif %}"></a>
                         </td>
                         <td>{{ product.name }}</td>
-                        <td>{{ item.quantity }}</td>
+                        <td>
+                            <form action="{% url 'cart:cart_add' product.id %}" method="POST">
+                                {% csrf_token %}
+                                {{ item.update_quantity_form.quantity }}
+                                {{ item.update_quantity_form.override }}
+                            <input type="submit" value="Update">
+                            </form>
+                        </td>
                         <td>
                             <form action="{% url 'cart:cart_remove' product.id %}">
                                 <input type="submit" value="Remove">
