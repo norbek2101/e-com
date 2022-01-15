@@ -10,8 +10,6 @@ from cart.cart import Cart
 
 @require_POST
 def cart_add(request, product_id):
-    print(request)
-    print('***************************')
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
     form = CartAddProductForm(request.POST)
